@@ -1,11 +1,11 @@
 project "GLFW"
-  kind "StaticLib"
-  language "C"
-  
-  targetdir ("bin/" .. outputDir .. "/%{prj.name}")
-  objdir ("obj/" .. outputDir .. "/%{prj.name}")
-  
-  ffiles
+	kind "StaticLib"
+	language "C"
+
+	targetdir ("bin/" .. outputDir .. "/%{prj.name}")
+	objdir ("obj/" .. outputDir .. "/%{prj.name}")
+
+	files
 	{
 		"include/GLFW/glfw3.h",
 		"include/GLFW/glfw3native.h",
@@ -17,9 +17,9 @@ project "GLFW"
 		"src/vulkan.c",
 		"src/window.c"
 	}
-  
-  filter "system:windows"
-    buildoptions { "-std=c11", "-lgdi32" }
+	
+	filter "system:windows"
+	buildoptions { "-std=c11", "-lgdi32" }
 		systemversion "latest"
 		staticruntime "On"
 
